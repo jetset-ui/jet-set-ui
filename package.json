@@ -1,0 +1,19 @@
+{
+  "name": "jet-set-ui-test",
+  "version": "1.0.0",
+  "description": "tailwind-ui",
+  "main": "./bin/copy-component.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jetset-ui/jet-set-ui.git"
+  },
+  "keywords": [
+    "jet-set-ui"
+  ],
+  "author": "asifazad799",
+  "license": "ISC",
+  "homepage": "https://github.com/jetset-ui/jet-set-ui#readme"
+}
