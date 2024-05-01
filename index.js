@@ -13,7 +13,6 @@ async function copyComponent(componentName) {
   try {
     const componentDirectory = path.join(
       __dirname,
-      "..",
       "jet-set-ui",
       "src",
       "components",
@@ -60,7 +59,8 @@ if (!componentName) {
 // Check if npm install is attempted
 if (
   process.env.npm_config_argv &&
-  process.env.npm_config_argv.includes("install")
+  (process.env.npm_config_argv.includes("install") ||
+    process.env.npm_config_argv.includes("i"))
 ) {
   console.error(
     "This package cannot be installed via npm. Please use npx to execute it."
