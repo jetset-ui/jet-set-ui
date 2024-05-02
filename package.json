@@ -1,6 +1,6 @@
 {
   "name": "jet-set-ui",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "tailwind-ui",
   "main": "index.js",
   "bin": "./index.js",
@@ -14,7 +14,7 @@
   "keywords": [
     "jet-set-ui"
   ],
-  "author": "asifazad799",
+  "author": "jetsetui",
   "license": "ISC",
   "homepage": "https://github.com/jetset-ui/jet-set-ui#readme",
   "bugs": {
