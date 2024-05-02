@@ -13,13 +13,17 @@ async function copyComponent(componentName) {
   try {
     const componentDirectory = path.join(
       __dirname,
-      "playground",
-      "react",
-      "src",
+      "jet-set-ui",
       "components",
       componentName
     );
-    const targetDirectory = path.join(process.cwd(), componentName);
+    const targetDirectory = path.join(
+      process.cwd(),
+      "src",
+      "jet-set-ui-components",
+      "components",
+      componentName
+    );
 
     // Check if component directory exists
     const exists = fs.existsSync(componentDirectory);
@@ -29,7 +33,7 @@ async function copyComponent(componentName) {
     }
 
     // Create target directory
-    await mkdir(targetDirectory);
+    await mkdir(targetDirectory, { recursive: true });
 
     // Copy component files
     const files = await readdir(componentDirectory);
