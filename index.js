@@ -40,7 +40,7 @@ async function copyComponent(componentName) {
     }
 
     console.log(
-      `\u001b[32m Component '${componentName}' copied successfully to '${targetDirectory}'.`
+      `\nComponent '${componentName}' copied successfully to \u001b[32m'${targetDirectory}'\u001b[32m \n`
     );
   } catch (error) {
     console.error("Error:", error);
