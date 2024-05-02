@@ -3,7 +3,6 @@
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
-const { exec } = require("child_process");
 
 const copyFile = promisify(fs.copyFile);
 const mkdir = promisify(fs.mkdir);
@@ -40,7 +39,7 @@ async function copyComponent(componentName) {
 
     // Copy component files
     const files = await readdir(componentDirectory);
-    copying(files, componentDirectory, targetDirectory, path)
+    copying(files, componentDirectory, targetDirectory)
       .then(() => {
         process.exit(1);
       })
@@ -76,7 +75,7 @@ if (
 copyComponent(componentName);
 
 // Function to refresh directory listing
-async function copying(files, componentDirectory, targetDirectory, path) {
+async function copying(files, componentDirectory, targetDirectory) {
   return new Promise(async (resolve, reject) => {
     try {
       for (const file of files) {

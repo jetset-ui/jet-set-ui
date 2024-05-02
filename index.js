@@ -3,7 +3,6 @@
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
-const { exec } = require("child_process");
 
 const copyFile = promisify(fs.copyFile);
 const mkdir = promisify(fs.mkdir);
@@ -38,24 +37,13 @@ async function copyComponent(componentName) {
 
     // Copy component files
     const files = await readdir(componentDirectory);
-    copying(files)
+    copying(files, componentDirectory, targetDirectory)
       .then(() => {
         process.exit(1);
       })
       .catch((error) => {
         throw new Error(error);
       });
-    // for (const file of files) {
-    //   await copyFile(
-    //     path.join(componentDirectory, file),
-    //     path.join(targetDirectory, file)
-    //   ).then(() => {
-    //     console.log(
-    //       `\nComponent '${componentName}' copied successfully to \u001b[32m'${targetDirectory}'\u001b[32m \n`
-    //     );
-    //     process.exit(1);
-    //   });
-    // }
   } catch (error) {
     console.error("Error:", error);
     process.exit(1);
@@ -85,7 +73,7 @@ if (
 copyComponent(componentName);
 
 // Function to refresh directory listing
-async function copying(files) {
+async function copying(files, componentDirectory, targetDirectory) {
   return new Promise(async (resolve, reject) => {
     try {
       for (const file of files) {
@@ -102,20 +90,5 @@ async function copying(files) {
     } catch (err) {
       reject(err);
     }
-  });
-}
-
-// Function to refresh directory listing
-async function refreshDirectory(directoryPath) {
-  return new Promise((resolve, reject) => {
-    exec("refresh_command", { cwd: directoryPath }, (error, stdout, stderr) => {
-      if (error) {
-        console.error("Error refreshing directory:", error);
-        reject(error);
-      } else {
-        console.log("Directory refreshed successfully.");
-        resolve();
-      }
-    });
   });
 }
