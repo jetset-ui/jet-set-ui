@@ -13,7 +13,8 @@ async function copyComponent(componentName) {
   try {
     const componentDirectory = path.join(
       __dirname,
-      "jet-set-ui",
+      "playground",
+      "react",
       "src",
       "components",
       componentName
