@@ -59,10 +59,7 @@ if (!componentName) {
 }
 
 // Check if npm install is attempted
-if (
-  process.env.npm_config_argv &&
-  process.env.npm_config_argv.includes("install")
-) {
+if (process.argv && process.argv[0] === "npm") {
   console.error(
     "This package cannot be installed via npm. Please use npx to execute it."
   );
