@@ -1,11 +1,12 @@
 {
   "name": "jet-set-ui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "tailwind-ui",
   "main": "index.js",
   "bin": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update:components": "node ./utils/copy-components.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/jetset-ui/jet-set-ui#readme",
   "bugs": {
     "url": "https://github.com/jetset-ui/jet-set-ui/issues"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
   }
 }
