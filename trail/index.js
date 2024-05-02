@@ -13,12 +13,14 @@ async function copyComponent(componentName) {
   try {
     const componentDirectory = path.join(
       __dirname,
+      "../",
       "jet-set-ui",
       "components",
       componentName
     );
     const targetDirectory = path.join(
       process.cwd(),
+      "trail",
       "src",
       "jet-set-ui",
       "components",
