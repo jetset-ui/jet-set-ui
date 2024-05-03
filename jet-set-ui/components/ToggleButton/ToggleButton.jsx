@@ -1,7 +1,5 @@
 import React from "react";
 
-function ToggleButton() {
+export function ToggleButton() {
   return <div>ToggleButton</div>;
 }
-
-export default ToggleButton;
