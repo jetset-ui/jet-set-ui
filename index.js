@@ -2,11 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { promisify } = require("util");
-
-const copyFile = promisify(fs.copyFile);
-const mkdir = promisify(fs.mkdir);
-const readdir = promisify(fs.readdir);
+const fsExtra = require("fs-extra");
 
 // Function to copy React component directory
 async function copyComponent(componentName) {
@@ -33,17 +29,14 @@ async function copyComponent(componentName) {
     }
 
     // Create target directory
-    await mkdir(targetDirectory, { recursive: true });
+    fsExtra.ensureDirSync(targetDirectory);
 
-    // Copy component files
-    const files = await readdir(componentDirectory);
-    copying(files, componentDirectory, targetDirectory)
-      .then(() => {
-        process.exit(1);
-      })
-      .catch((error) => {
-        throw new Error(error);
-      });
+    // Copy component directory
+    fsExtra.copySync(componentDirectory, targetDirectory);
+
+    console.log(
+      `\nComponent '${componentName}' copied successfully to \u001b[32m'${targetDirectory}'\u001b[32m \n`
+    );
   } catch (error) {
     console.error("Error:", error);
     process.exit(1);
@@ -68,24 +61,3 @@ if (process.argv && process.argv[0] === "npm") {
 
 // Call the function
 copyComponent(componentName);
-
-// Function to refresh directory listing
-async function copying(files, componentDirectory, targetDirectory) {
-  return new Promise(async (resolve, reject) => {
-    try {
-      for (const file of files) {
-        await copyFile(
-          path.join(componentDirectory, file),
-          path.join(targetDirectory, file)
-        ).then(() => {
-          console.log(
-            `\nComponent '${componentName}' copied successfully to \u001b[32m'${targetDirectory}'\u001b[32m \n`
-          );
-        });
-      }
-      resolve();
-    } catch (err) {
-      reject(err);
-    }
-  });
-}
