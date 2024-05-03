@@ -1,6 +1,6 @@
 {
   "name": "jet-set-ui",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "tailwind-ui",
   "main": "index.js",
   "bin": "./index.js",
