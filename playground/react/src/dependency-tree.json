@@ -1,0 +1,25 @@
+{
+  "Card1": {
+    "path": "playground/react/src/cards/Crard-1/Card1.jsx",
+    "dependencies": [
+      "Button",
+      "CheckBox",
+      "LoginForm"
+    ]
+  },
+  "Dashboard": {
+    "path": "playground/react/src/pages/Dashboard/Dashboard.jsx",
+    "dependencies": [
+      "Button",
+      "CheckBox",
+      "LoginForm",
+      "Card1"
+    ]
+  },
+  "LoginForm": {
+    "path": "playground/react/src/form/LoginForm/LoginForm.jsx",
+    "dependencies": [
+      "Button"
+    ]
+  }
+}

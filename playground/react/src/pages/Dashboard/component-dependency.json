@@ -1,0 +1,9 @@
+{
+  "Dashboard": {
+    "path": "playground/react/src/pages/Dashboard/Dashboard.jsx",
+    "dependencies": {
+      "cards": ["Card1"],
+      "components": ["Button"]
+    }
+  }
+}
