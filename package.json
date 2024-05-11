@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "update:components": "node ./utils/copy-components.js",
     "update:cards": "node ./utils/copy-cards.js",
-    "npx:local": "node ./trail/index.js"
+    "npx:local": "node ./trail/index.js",
+    "tracker": "node ./utils/components-import-tracker-v3.js"
   },
   "repository": {
     "type": "git",

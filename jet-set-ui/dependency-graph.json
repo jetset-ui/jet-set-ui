@@ -1,32 +1,22 @@
 {
   "Card1": {
     "path": "playground/react/src/cards/Crard-1/Card1.jsx",
-    "dependencies": [
-      "Button",
-      "CheckBox",
-      "LoginForm"
-    ]
+    "dependencies": ["Button", "CheckBox", "LoginForm"]
   },
   "Dashboard": {
     "path": "playground/react/src/pages/Dashboard/Dashboard.jsx",
-    "dependencies": [
-      "Button",
-      "CheckBox",
-      "LoginForm",
-      "Card1",
-      "ToggleButton"
-    ]
+    "dependencies": ["Button", "CheckBox", "LoginForm", "Card1", "ToggleButton"]
   },
   "LoginForm": {
     "path": "playground/react/src/form/LoginForm/LoginForm.jsx",
-    "dependencies": [
-      "Button",
-      "CheckBox",
-      "Card1"
-    ]
+    "dependencies": []
   },
   "Button": {
     "path": "playground/react/src/components/Button/Button.jsx",
+    "dependencies": []
+  },
+  "CheckBox": {
+    "path": "playground/react/src/cards/Crard-1/Card1.jsx",
     "dependencies": []
   }
 }
